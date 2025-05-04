@@ -1,0 +1,3 @@
+[submodule "nop"]
+	path = nop/nop
+	url = https://github.com/Dev-NotAqua/nop.git

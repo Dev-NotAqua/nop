@@ -1,0 +1,3 @@
+[submodule "sigma/nop"]
+	path = sigma/nop
+	url = https://github.com/Dev-NotAqua/nop.git
