@@ -1,4 +1,5 @@
 import './styles.css';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function CheatDetails() {
@@ -7,7 +8,7 @@ export default function CheatDetails() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Image Section */}
         <div className="cheat-image relative overflow-hidden rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-lg">
-          <img src="/nop/cheat.png" alt="FiveM Cheat" className="w-full h-auto rounded-xl transform transition-all duration-500 hover:scale-110" />
+          <Image src="/nop/cheat.png" alt="FiveM Cheat" width={800} height={600} className="w-full h-auto rounded-xl transform transition-all duration-500 hover:scale-110" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
       </div>
 

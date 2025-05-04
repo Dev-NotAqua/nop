@@ -1,5 +1,6 @@
 import './styles.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import SpotifyPlayer from './components/SpotifyPlayer';
 import ScrollReveal from './components/ScrollReveal';
 // Add this GitHubIcon component
@@ -53,7 +54,10 @@ const skills = [
   { skill: 'C#', category: 'Backend', icon: '/nop/icons/csharp.svg' },
   { skill: 'C++', category: 'Systems', icon: '/nop/icons/cplusplus.svg' },
   { skill: 'Python', category: 'Scripting', icon: '/nop/icons/python.svg' },
-  { skill: 'Kotlin', category: 'Mobile', icon: '/nop/icons/kotlin.svg' }
+  { skill: 'Kotlin', category: 'Mobile', icon: '/nop/icons/kotlin.svg' },
+  { skill: 'Lua', category: 'Scripting', icon: '/nop/icons/lua.svg' },
+  { skill: 'Java', category: 'Backend', icon: '/nop/icons/java.svg' },
+  { skill: 'PHP', category: 'Backend', icon: '/nop/icons/php.svg' }
 ];
 
 export default function Home() {
@@ -71,7 +75,7 @@ export default function Home() {
           
           {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
-            <a href="https://github.com/setsnopraura" 
+            <a href="https://github.com/Dev-NotAqua" 
                className="group bg-secondary-800/50 backdrop-blur-sm p-4 rounded-xl hover:bg-secondary-700/70 transition-all flex flex-col items-center relative overflow-hidden animate-float hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover"
                style={{ animationDelay: '0s', width: '180px' }}>
               <div className="w-8 h-8 mb-2 text-secondary-400 group-hover:text-primary-400 transition-colors duration-500 flex items-center justify-center">
@@ -81,14 +85,14 @@ export default function Home() {
               <span className="text-secondary-400 transition-colors duration-500 group-hover:text-primary-300 text-sm text-center">@setsnopraura</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
-            <a href="https://twitter.com/JustMateNp" 
+            <a href="https://x.com/DevAqua_" 
                className="group bg-secondary-800/50 backdrop-blur-sm p-4 rounded-xl hover:bg-secondary-700/70 transition-all flex flex-col items-center relative overflow-hidden animate-float hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover"
                style={{ animationDelay: '0.2s', width: '180px' }}>
               <div className="w-8 h-8 mb-2 text-secondary-400 group-hover:text-primary-400 transition-colors duration-500 flex items-center justify-center">
                 <TwitterIcon />
               </div>
               <span className="block font-medium text-base transition-colors duration-500 group-hover:text-primary-400 text-center">Twitter</span>
-              <span className="text-secondary-400 transition-colors duration-500 group-hover:text-primary-300 text-sm text-center">@JustMateNp</span>
+              <span className="text-secondary-400 transition-colors duration-500 group-hover:text-primary-300 text-sm text-center">@DevAqua_</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a href="https://discord.com/users/JustMateNp" 
@@ -117,9 +121,11 @@ export default function Home() {
                 <div key={skill} 
                      className="skill-card p-4 bg-secondary-800/50 backdrop-blur-sm rounded-xl hover:bg-secondary-700/70 transition-all group border border-secondary-700 hover:border-primary-400 lucid-hover">
                   <div className="flex items-center gap-3 mb-2">
-                    <img 
+                    <Image 
                       src={icon} 
                       alt={skill} 
+                      width={32} 
+                      height={32} 
                       className="w-8 h-8 transition-all duration-300 group-hover:scale-110" 
                     />
                     <h3 className="text-lg font-medium text-secondary-400 group-hover:text-primary-400 transition-colors duration-500">
@@ -180,7 +186,7 @@ function ProjectCard({ title, description, image }: { title: string, description
   return (
     <div className="bg-secondary-800/50 backdrop-blur-sm p-6 rounded-xl hover:bg-secondary-700/70 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover">
       <div className="cheat-image">
-        <img src={image} alt={title} className="w-full h-48 object-cover rounded-lg mb-4" />
+        <Image src={image} alt={title} width={800} height={400} className="w-full h-48 object-cover rounded-lg mb-4" />
       </div>
       <h3 className="font-medium text-xl mb-2 transition-colors duration-500 hover:text-primary-400">{title}</h3>
       <p className="text-secondary-400 transition-colors duration-500 hover:text-primary-300">{description}</p>
