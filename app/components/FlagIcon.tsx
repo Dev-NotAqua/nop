@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Tooltip } from 'react-tooltip';
 
 interface FlagIconProps {
   country: 'italy' | 'uk' | 'france';
@@ -10,10 +9,9 @@ interface FlagIconProps {
   showLevel?: boolean;
   showTooltip?: boolean;
   tooltipContent?: string;
-  levelTooltip?: string;
 }
 
-const FlagIcon: React.FC<FlagIconProps> = ({ country, className = '', level, showLevel = false, showTooltip = false, tooltipContent = '', levelTooltip = '' }) => {
+const FlagIcon: React.FC<FlagIconProps> = ({ country, className = '', level, showLevel = false, showTooltip = false, tooltipContent = '' }) => {
   const flags = {
     italy: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className={`w-full h-full ${className}`}>

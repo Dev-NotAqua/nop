@@ -45,7 +45,7 @@ const DiscordIcon = () => (
   </svg>
 );
 
-export const skills = [
+const skills = [
   { skill: 'JavaScript', category: 'Frontend', icon: '/nop/icons/javascript.svg' },
   { skill: 'TypeScript', category: 'Frontend', icon: '/nop/icons/typescript.svg' },
   { skill: 'React', category: 'Frontend', icon: '/nop/icons/react.svg' },
@@ -173,8 +173,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-3xl blur-xl -z-10"></div>
             <h2 className="text-4xl font-bold mb-10 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent animate-text-glow drop-shadow-lg filter drop-shadow-md">
               <span className="relative inline-block">
-                Lingue
-                <span className="absolute inset-0 blur-sm bg-gradient-to-r from-primary-400 to-primary-600 opacity-40 -z-10"></span>
+                Languages
+                <span className="absolute inset-0 blur-md bg-gradient-to-r from-purple-600/50 via-primary-500/50 to-blue-600/50 opacity-60 -z-10 transform scale-110"></span>
+                <span className="absolute inset-0 blur-sm bg-gradient-to-r from-primary-400 to-primary-600 opacity-40 -z-5"></span>
               </span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
