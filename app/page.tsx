@@ -71,7 +71,7 @@ export default function Home() {
         <section className="text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl font-bold gold-text lucid-hover p-4 rounded-lg">
-              疤脸 ЙѳPяацяа
+            Aqua
             </h1>
             <p className="text-xl text-secondary-500 animate-fade-in">Developer & Creator</p>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
                 <GitHubIcon />
               </div>
               <span className="block font-medium text-base transition-colors duration-500 group-hover:text-primary-400 text-center">GitHub</span>
-              <span className="text-secondary-400 transition-colors duration-500 group-hover:text-primary-300 text-sm text-center">@setsnopraura</span>
+              <span className="text-secondary-400 transition-colors duration-500 group-hover:text-primary-300 text-sm text-center">@Dev-NotAqua</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a href="https://x.com/DevAqua_"
