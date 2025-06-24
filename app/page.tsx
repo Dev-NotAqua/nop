@@ -154,21 +154,21 @@ export default function Home() {
             <ProjectCard
               title="Memorial Application"
               description="An application designed to create and manage memorials, offering a space for remembrance."
-              image="/nop/memorial.png"
+              image="/memorial.png"
               liveDemo="/memorial"
             />
             {/* New Project 1 */}
             <ProjectCard
               title="Portfolio Builder"
               description="A modern portfolio builder that lets users create, customize, and publish their own web portfolios instantly."
-              image="/globe.svg"
+              image="/icons/globe.svg"
               liveDemo="/projects/portfolio-builder"
             />
             {/* New Project 2 */}
             <ProjectCard
               title="Real-Time Chat App"
               description="A real-time chat application with group channels, private messaging, and emoji support."
-              image="/window.svg"
+              image="/icons/window.svg"
               liveDemo="/projects/chat-app"
             />
           </div>
