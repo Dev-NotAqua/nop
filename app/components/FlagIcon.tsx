@@ -55,7 +55,7 @@ const FlagIcon: React.FC<FlagIconProps> = ({ country, className = '', level, sho
   return (
     <>
       <div 
-        className="flag-icon-container group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-primary-500/30 w-[6px] h-[4px] w-[6px] h-[4px]"
+        className="flag-icon-container glass-card group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-primary-500/30 w-[6px] h-[4px] w-[6px] h-[4px]"
       >
         <div className="hover:opacity-75 transition-opacity duration-300 relative z-10 hover:z-20" data-tooltip-id={showTooltip ? tooltipId : undefined} data-tooltip-content={tooltipContent}>
           {flags[country]}

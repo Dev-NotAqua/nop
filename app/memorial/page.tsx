@@ -1,46 +1,75 @@
+'use client';
 import './styles.css';
-import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+
+const STORAGE_KEY = 'memorial-app-data';
 
 export default function MemorialDetails() {
+  const [name, setName] = useState('');
+  const [memory, setMemory] = useState('');
+  const [memories, setMemories] = useState<{ name: string; memory: string }[]>([]);
+
+  // Load from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      setMemories(JSON.parse(saved));
+    } else {
+      setMemories([
+        { name: 'Nonna Maria', memory: 'Sempre gentile e sorridente.' },
+        { name: 'Luca', memory: 'Un amico vero, sempre presente.' },
+      ]);
+    }
+  }, []);
+
+  // Save to localStorage on change
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(memories));
+  }, [memories]);
+
+  function addMemory() {
+    if (name.trim() && memory.trim()) {
+      setMemories([{ name: name.trim(), memory: memory.trim() }, ...memories]);
+      setName('');
+      setMemory('');
+    }
+  }
+
   return (
-    <div className="min-h-screen p-8 cheat-bg text-secondary-100">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Image Section */}
-        <div className="cheat-image relative overflow-hidden rounded-xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-lg">
-          <Image src="/nop/memorial.png" alt="memorial image" width={800} height={600} className="w-full h-auto rounded-xl transform transition-all duration-500 hover:scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-      </div>
-
-        {/* Features Section */}
-        <div className="space-y-8">
-          <h1 className="text-4xl font-bold cheat-title">
-            Memorial Application Features
-          </h1>
-
-          {/* Core Features */}
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Core Features</h2>
-            <div className="grid grid-cols-1 gap-3">
-              <div className="feature-item">
-                <span className="font-medium text-primary-400">Memorial Creation</span> - 
-                Easy-to-use interface for creating memorials
-              </div>
-              <div className="feature-item">
-                <span className="font-medium text-primary-400">Memory Sharing</span> - 
-                Platform for sharing memories and stories
-              </div>
-              {/* Add more features as needed */}
-            </div>
-          </div>
-
-          <Link href="/" className="inline-block back-button">
-            <span className="button-content">
-              <span className="button-text">Back to Home</span>
-              <span className="button-icon">←</span>
-            </span>
-          </Link>
+    <div className="min-h-screen p-8 memorial-bg text-secondary-100 flex flex-col items-center justify-center">
+      <div className="max-w-2xl w-full glass-card p-8 flex flex-col gap-8 items-center">
+        <h1 className="text-4xl font-bold memorial-title mb-2">Memorial Application Live Demo</h1>
+        <p className="text-secondary-300 text-center mb-4">Crea e condividi un ricordo speciale.</p>
+        <div className="w-full flex flex-col gap-3">
+          <label className="text-secondary-200 font-semibold">Nome:</label>
+          <input
+            className="w-full p-2 rounded-lg bg-secondary-700/60 text-secondary-100 focus:outline-none mb-2"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            placeholder="Nome della persona"
+          />
+          <label className="text-secondary-200 font-semibold">Ricordo:</label>
+          <textarea
+            className="w-full p-2 rounded-lg bg-secondary-700/60 text-secondary-100 focus:outline-none mb-2"
+            value={memory}
+            onChange={e => setMemory(e.target.value)}
+            placeholder="Scrivi un ricordo..."
+            rows={2}
+          />
+          <button className="premium-btn w-full" onClick={addMemory} type="button">Aggiungi Ricordo</button>
         </div>
+        <div className="w-full flex flex-col gap-4 mt-6">
+          {memories.length === 0 ? (
+            <div className="text-secondary-400 italic text-center">Nessun ricordo ancora.</div>
+          ) : memories.map((m, idx) => (
+            <div key={idx} className="bg-secondary-800/60 rounded-xl p-4 flex flex-col gap-1 shadow-md">
+              <div className="font-semibold text-primary-400">{m.name}</div>
+              <div className="text-secondary-100">{m.memory}</div>
+            </div>
+          ))}
+        </div>
+        <Link href="/" className="premium-btn mt-4">Back to Home</Link>
       </div>
     </div>
   );

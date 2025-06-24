@@ -167,13 +167,23 @@ h1 {
 }
 
 .language-card {
-  animation: card-float 6s ease-in-out infinite;
-  animation-delay: calc(var(--index, 0) * 0.2s);
-  transition: transform 0.3s ease;
+  background: linear-gradient(120deg, rgba(39,39,42,0.7) 60%, rgba(139,92,246,0.10) 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px 0 rgba(139, 92, 246, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  border: 1.5px solid rgba(139, 92, 246, 0.13);
+  transition: box-shadow 0.3s, border 0.3s, transform 0.2s, background 0.3s;
+  will-change: transform, box-shadow;
+  position: relative;
+  overflow: hidden;
 }
-
 .language-card:hover {
-  transform: translateY(-5px) scale(1.03);
+  background: linear-gradient(120deg, rgba(139,92,246,0.13) 0%, rgba(39,39,42,0.8) 100%);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+  border: 1.5px solid #a78bfa;
+  transform: scale(1.045) rotateY(2deg);
+}
+.language-card .flag-wrapper {
+  margin-bottom: 1rem;
 }
 
 .language-card:nth-child(1) {
@@ -517,4 +527,201 @@ audio {
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
+}
+
+/* --- UI POLISH START --- */
+
+/* Modern Font Stack */
+html, body {
+  font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'sans-serif';
+  color: #e5e7eb;
+  background: linear-gradient(120deg, #18181b 0%, #23272f 100%);
+  min-height: 100vh;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(39, 39, 42, 0.6);
+  border: 1.5px solid rgba(139, 92, 246, 0.13);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  transition: box-shadow 0.3s, border 0.3s, transform 0.2s;
+}
+.glass-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.18);
+  border: 1.5px solid #a78bfa;
+  transform: translateY(-2px) scale(1.025);
+}
+
+/* Premium Button */
+.premium-btn {
+  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.premium-btn:hover, .premium-btn:focus {
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 100%);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.25);
+  transform: translateY(-1px) scale(1.04);
+}
+
+/* Social Icon Button */
+.social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(39, 39, 42, 0.6);
+  border: 1.5px solid rgba(139, 92, 246, 0.13);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: box-shadow 0.3s, border 0.3s, background 0.3s;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.social-btn:hover {
+  background: rgba(63, 63, 70, 0.7);
+  border: 1.5px solid #a78bfa;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.18);
+}
+
+/* Responsive Grid Tweaks */
+@media (max-width: 900px) {
+  .max-w-4xl, .max-w-6xl {
+    max-width: 98vw !important;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-animation, .description-block, .language-card, .skill-card {
+    border-radius: 0.75rem !important;
+    padding: 1rem !important;
+  }
+  .grid {
+    gap: 1rem !important;
+  }
+  h1, h2, h3 {
+    font-size: 1.2em !important;
+  }
+}
+
+/* Micro-interactions */
+.card-tap:active {
+  transform: scale(0.97);
+}
+
+/* Accessibility: Focus Ring */
+*:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+/* --- UI POLISH END --- */
+
+/* --- UI POLISH & BLUR FIX --- */
+
+/* Fix: Remove blur on hover for all cards */
+.glass-card,
+.glass-card:hover,
+.skill-card,
+.skill-card:hover,
+.language-card,
+.language-card:hover,
+.social-btn,
+.social-btn:hover {
+  backdrop-filter: blur(16px) !important;
+  filter: none !important;
+}
+
+/* Fix: Remove filter: blur on hover for scroll-reveal */
+.scroll-reveal,
+.scroll-reveal.visible {
+  filter: none !important;
+}
+
+/* Enhanced 3D and Shadow Effects */
+.glass-card:hover,
+.skill-card:hover,
+.language-card:hover {
+  transform: perspective(900px) rotateY(2deg) scale(1.035);
+  box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.22), 0 2px 8px rgba(0,0,0,0.10);
+  border: 1.5px solid #c4b5fd;
+}
+
+/* Micro-interactions for buttons */
+.premium-btn:active,
+.social-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.10);
+}
+
+/* Add a subtle color pulse to premium buttons on hover */
+.premium-btn:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(139,92,246,0.10) 0%, transparent 80%);
+  animation: btn-pulse 1.2s infinite linear;
+  pointer-events: none;
+}
+@keyframes btn-pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.2; }
+}
+
+/* Add a floating effect to all cards */
+.glass-card, .skill-card, .language-card {
+  animation: card-float 7s ease-in-out infinite;
+}
+
+/* Add a pop-in effect for cards on reveal */
+.scroll-reveal.visible {
+  animation: smooth-reveal 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* Add a subtle shadow to images on hover */
+.cheat-image:hover img,
+.memorial-image:hover img {
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+  transform: scale(1.04) rotateZ(1deg);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* --- UI POLISH: LANGUAGE & ABOUT --- */
+.description-block .glass-card {
+  background: linear-gradient(120deg, rgba(39,39,42,0.7) 60%, rgba(139,92,246,0.10) 100%);
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px 0 rgba(139, 92, 246, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  border: 1.5px solid rgba(139, 92, 246, 0.13);
+  transition: box-shadow 0.3s, border 0.3s, transform 0.2s, background 0.3s;
+  will-change: transform, box-shadow;
+  position: relative;
+  overflow: hidden;
+}
+.description-block .glass-card:hover {
+  background: linear-gradient(120deg, rgba(139,92,246,0.13) 0%, rgba(39,39,42,0.8) 100%);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+  border: 1.5px solid #a78bfa;
+  transform: scale(1.045) rotateY(2deg);
+}
+
+/* Entrance animation for language and about cards */
+.language-card, .description-block .glass-card {
+  animation: smooth-reveal 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }

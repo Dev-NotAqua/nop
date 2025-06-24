@@ -34,7 +34,9 @@ export default function ScrollReveal({ children }: { children: React.ReactNode }
   return (
     <div 
       ref={ref}
-      className={`scroll-reveal ${isVisible ? 'visible' : ''}`}
+      className={`scroll-reveal glass-card ${isVisible ? 'visible' : ''}`}
+      tabIndex={0}
+      aria-live="polite"
     >
       {children}
     </div>

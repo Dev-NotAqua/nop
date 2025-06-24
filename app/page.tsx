@@ -1,9 +1,7 @@
 import './styles.css';
-import Link from 'next/link';
 import Image from 'next/image';
 import SpotifyPlayer from './components/SpotifyPlayer';
 import ScrollReveal from './components/ScrollReveal';
-import FlagIcon from './components/FlagIcon';
 // Add this GitHubIcon component
 const GitHubIcon = () => (
   <svg
@@ -46,19 +44,19 @@ const DiscordIcon = () => (
 );
 
 const skills = [
-  { skill: 'JavaScript', category: 'Frontend', icon: '/nop/icons/javascript.svg' },
-  { skill: 'TypeScript', category: 'Frontend', icon: '/nop/icons/typescript.svg' },
-  { skill: 'React', category: 'Frontend', icon: '/nop/icons/react.svg' },
-  { skill: 'Next.js', category: 'Fullstack', icon: '/nop/icons/nextjs.svg' },
-  { skill: 'Node.js', category: 'Backend', icon: '/nop/icons/nodejs.svg' },
-  { skill: 'TailwindCSS', category: 'Styling', icon: '/nop/icons/tailwindcss.svg' },
-  { skill: 'C#', category: 'Backend', icon: '/nop/icons/csharp.svg' },
-  { skill: 'C++', category: 'Systems', icon: '/nop/icons/cplusplus.svg' },
-  { skill: 'Python', category: 'Scripting', icon: '/nop/icons/python.svg' },
-  { skill: 'Kotlin', category: 'Mobile', icon: '/nop/icons/kotlin.svg' },
-  { skill: 'Lua', category: 'Scripting', icon: '/nop/icons/lua.svg' },
-  { skill: 'Java', category: 'Backend', icon: '/nop/icons/java.svg' },
-  { skill: 'PHP', category: 'Backend', icon: '/nop/icons/php.svg' }
+  { skill: 'JavaScript', category: 'Frontend', icon: '/icons/javascript.svg' },
+  { skill: 'TypeScript', category: 'Frontend', icon: '/icons/typescript.svg' },
+  { skill: 'React', category: 'Frontend', icon: '/icons/react.svg' },
+  { skill: 'Next.js', category: 'Fullstack', icon: '/icons/nextjs.svg' },
+  { skill: 'Node.js', category: 'Backend', icon: '/icons/nodejs.svg' },
+  { skill: 'TailwindCSS', category: 'Styling', icon: '/icons/tailwindcss.svg' },
+  { skill: 'C#', category: 'Backend', icon: '/icons/csharp.svg' },
+  { skill: 'C++', category: 'Systems', icon: '/icons/cplusplus.svg' },
+  { skill: 'Python', category: 'Scripting', icon: '/icons/python.svg' },
+  { skill: 'Kotlin', category: 'Mobile', icon: '/icons/kotlin.svg' },
+  { skill: 'Lua', category: 'Scripting', icon: '/icons/lua.svg' },
+  { skill: 'Java', category: 'Backend', icon: '/icons/java.svg' },
+  { skill: 'PHP', category: 'Backend', icon: '/icons/php.svg' }
 ];
 
 const description = `As a passionate developer, I specialize in creating impactful web experiences. My expertise includes JavaScript, TypeScript, React for frontend, and Node.js, C# for backend development. I take pride in writing clean, efficient code that enhances performance and maintainability. My portfolio includes projects like the FiveM Cheat tool and Memorial Application, showcasing my ability to tackle complex challenges. I'm always eager to learn and contribute to exciting projects that make a difference.`;
@@ -68,7 +66,7 @@ export default function Home() {
     <main className="min-h-screen p-4 intro-animation">
       <div className="max-w-4xl mx-auto py-16 space-y-16">
         {/* Hero Section */}
-        <section className="text-center space-y-8">
+        <section className="text-center space-y-8 glass-card p-8">
           <div className="space-y-4">
             <h1 className="text-5xl font-bold gold-text lucid-hover p-4 rounded-lg">
             Aqua
@@ -79,8 +77,9 @@ export default function Home() {
           {/* Social Links */}
           <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
             <a href="https://github.com/Dev-NotAqua"
-              className="group bg-secondary-800/50 backdrop-blur-sm p-4 rounded-xl hover:bg-secondary-700/70 transition-all flex flex-col items-center relative overflow-hidden animate-float hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover"
-              style={{ animationDelay: '0s', width: '180px' }}>
+              className="social-btn group animate-float border lucid-hover"
+              style={{ animationDelay: '0s', width: '180px' }}
+              aria-label="GitHub: Dev-NotAqua">
               <div className="w-8 h-8 mb-2 text-secondary-400 group-hover:text-primary-400 transition-colors duration-500 flex items-center justify-center">
                 <GitHubIcon />
               </div>
@@ -89,8 +88,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a href="https://x.com/DevAqua_"
-              className="group bg-secondary-800/50 backdrop-blur-sm p-4 rounded-xl hover:bg-secondary-700/70 transition-all flex flex-col items-center relative overflow-hidden animate-float hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover"
-              style={{ animationDelay: '0.2s', width: '180px' }}>
+              className="social-btn group animate-float border lucid-hover"
+              style={{ animationDelay: '0.2s', width: '180px' }}
+              aria-label="Twitter: DevAqua_">
               <div className="w-8 h-8 mb-2 text-secondary-400 group-hover:text-primary-400 transition-colors duration-500 flex items-center justify-center">
                 <TwitterIcon />
               </div>
@@ -99,8 +99,9 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
             <a href="https://discord.com/users/JustMateNp"
-              className="group bg-secondary-800/50 backdrop-blur-sm p-4 rounded-xl hover:bg-secondary-700/70 transition-all flex flex-col items-center relative overflow-hidden animate-float hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover"
-              style={{ animationDelay: '0.4s', width: '180px' }}>
+              className="social-btn group animate-float border lucid-hover"
+              style={{ animationDelay: '0.4s', width: '180px' }}
+              aria-label="Discord: JustMateNp">
               <div className="w-8 h-8 mb-2 text-secondary-400 group-hover:text-primary-400 transition-colors duration-500 flex items-center justify-center">
                 <DiscordIcon />
               </div>
@@ -115,26 +116,25 @@ export default function Home() {
 
         {/* Skills Section */}
         <ScrollReveal>
-          <section className="section-animation">
+          <section className="section-animation p-8">
             <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent animate-text-glow">
               Skills & Technologies
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
               {skills.map(({ skill, category, icon }) => (
                 <div key={skill}
-                  className="skill-card p-4 bg-secondary-800/50 backdrop-blur-sm rounded-xl hover:bg-secondary-700/70 transition-all group border border-secondary-700 hover:border-primary-400 lucid-hover">
-                  <div className="flex items-center gap-3 mb-2">
-                    <Image
-                      src={icon}
-                      alt={skill}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 transition-all duration-300 group-hover:scale-110"
-                    />
-                    <h3 className="text-lg font-medium text-secondary-400 group-hover:text-primary-400 transition-colors duration-500">
-                      {skill}
-                    </h3>
-                  </div>
+                  className="skill-card glass-card p-4 group border lucid-hover flex flex-col gap-2 items-start justify-center min-h-[90px]">
+                  <Image
+                    src={icon}
+                    alt={skill}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 transition-all duration-300 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <h3 className="text-lg font-medium text-secondary-400 group-hover:text-primary-400 transition-colors duration-500">
+                    {skill}
+                  </h3>
                   <span className="text-sm text-secondary-500 group-hover:text-primary-300 transition-colors duration-500">
                     {category}
                   </span>
@@ -145,101 +145,71 @@ export default function Home() {
         </ScrollReveal>
 
         {/* Projects Section */}
-        <section className="section-animation">
+        <section className="section-animation p-8">
           <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent animate-text-glow">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Link href="/cheat">
-              <ProjectCard
-                title="FiveM Cheat"
-                description="A custom cheat tool developed for the FiveM platform, enhancing gameplay with unique features."
-                image="/nop/cheat.png"
-              />
-            </Link>
-            <Link href="/memorial">
-              <ProjectCard
-                title="Memorial Application"
-                description="An application designed to create and manage memorials, offering a space for remembrance."
-                image="/nop/memorial.png"
-              />
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Memorial Application with Live Demo */}
+            <ProjectCard
+              title="Memorial Application"
+              description="An application designed to create and manage memorials, offering a space for remembrance."
+              image="/nop/memorial.png"
+              liveDemo="/memorial"
+            />
+            {/* New Project 1 */}
+            <ProjectCard
+              title="Portfolio Builder"
+              description="A modern portfolio builder that lets users create, customize, and publish their own web portfolios instantly."
+              image="/globe.svg"
+              liveDemo="/projects/portfolio-builder"
+            />
+            {/* New Project 2 */}
+            <ProjectCard
+              title="Real-Time Chat App"
+              description="A real-time chat application with group channels, private messaging, and emoji support."
+              image="/window.svg"
+              liveDemo="/projects/chat-app"
+            />
           </div>
         </section>
 
         {/* Languages Section */}
         <ScrollReveal>
           <section className="section-animation max-w-2xl mx-auto relative py-10 px-4">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-3xl blur-xl -z-10"></div>
-            <h2 className="text-4xl font-bold mb-10 text-center bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent animate-text-glow drop-shadow-lg filter drop-shadow-md">
-              <span className="relative inline-block">
-                Languages
-                <span className="absolute inset-0 blur-md bg-gradient-to-r from-purple-600/50 via-primary-500/50 to-blue-600/50 opacity-60 -z-10 transform scale-110"></span>
-                <span className="absolute inset-0 blur-sm bg-gradient-to-r from-primary-400 to-primary-600 opacity-40 -z-5"></span>
-              </span>
-            </h2>
+            <div className="flex flex-col items-center mb-10">
+              <span className="text-3xl font-extrabold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent animate-text-glow drop-shadow-lg">Spoken Languages</span>
+              <span className="block w-32 h-1 mt-2 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 blur-[1.5px] opacity-80 animate-pulse"></span>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="language-card bg-gradient-to-br from-secondary-800/80 to-secondary-900/80 backdrop-blur-sm p-6 rounded-xl border border-secondary-700 hover:border-primary-400 transition-all group overflow-hidden relative shadow-xl hover:shadow-2xl">
-                <div className="flag-wrapper flex items-center mb-4">
-                  <div className="w-16 h-10 animate-flag-wave">
-                    <FlagIcon
-                      country="italy"
-                      showTooltip={true}
-                      tooltipContent="Lingua madre - Fluente in tutte le competenze"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-500">Italiano</h3>
-                    <span className="text-primary-400 font-semibold text-sm mt-1">Madrelingua</span>
-                  </div>
-                </div>
+              <div className="language-card glass-card shadow-xl animate-float group hover:scale-105 transition-all duration-300 flex flex-col items-center p-6">
+                <div className="text-6xl mb-2">🇮🇹</div>
+                <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-500">Italiano</h3>
+                <span className="inline-block mt-1 mb-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 text-white text-xs font-semibold shadow-md">Madrelingua</span>
                 <div className="mt-2 mb-1 text-xs text-secondary-300 font-medium">Livello di competenza</div>
                 <div className="w-full bg-secondary-700/50 h-3 rounded-full overflow-hidden shadow-inner" role="progressbar" aria-valuenow={100} aria-valuemin={0} aria-valuemax={100} aria-label="Livello madrelingua italiano">
                   <div className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 h-full rounded-full language-bar-animation" style={{ width: '100%' }}></div>
                 </div>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-700 ease-in-out"></div>
               </div>
 
-              <div className="language-card bg-gradient-to-br from-secondary-800/80 to-secondary-900/80 backdrop-blur-sm p-6 rounded-xl border border-secondary-700 hover:border-primary-400 transition-all group overflow-hidden relative shadow-xl hover:shadow-2xl">
-                <div className="flag-wrapper flex items-center mb-4">
-                  <div className="w-16 h-10 animate-flag-wave">
-                    <FlagIcon
-                      country="uk"
-                      showTooltip={true}
-                      tooltipContent="Ottima padronanza in lettura, scrittura e conversazione"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-500">Inglese</h3>
-                    <span className="text-primary-400 font-semibold text-sm mt-1">Avanzato</span>
-                  </div>
-                </div>
+              <div className="language-card glass-card shadow-xl animate-float group hover:scale-105 transition-all duration-300 flex flex-col items-center p-6">
+                <div className="text-6xl mb-2">🇬🇧</div>
+                <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-500">Inglese</h3>
+                <span className="inline-block mt-1 mb-2 px-3 py-1 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 text-white text-xs font-semibold shadow-md">Avanzato</span>
                 <div className="mt-2 mb-1 text-xs text-secondary-300 font-medium">Livello di competenza</div>
                 <div className="w-full bg-secondary-700/50 h-3 rounded-full overflow-hidden shadow-inner" role="progressbar" aria-valuenow={90} aria-valuemin={0} aria-valuemax={100} aria-label="Livello avanzato inglese">
-                  <div className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 h-full rounded-full language-bar-animation" style={{ width: '90%' }}></div>
+                  <div className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 h-full rounded-full language-bar-animation" style={{ width: '90%' }}></div>
                 </div>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-700 ease-in-out"></div>
               </div>
 
-              <div className="language-card bg-gradient-to-br from-secondary-800/80 to-secondary-900/80 backdrop-blur-sm p-6 rounded-xl border border-secondary-700 hover:border-primary-400 transition-all group overflow-hidden relative shadow-xl hover:shadow-2xl">
-                <div className="flag-wrapper flex items-center mb-4">
-                  <div className="w-16 h-10 animate-flag-wave">
-                    <FlagIcon
-                      country="france"
-                      showTooltip={true}
-                      tooltipContent="Buona comprensione e comunicazione di base"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-500">Francese</h3>
-                    <span className="text-primary-400 font-semibold text-sm mt-1">Intermedio</span>
-                  </div>
-                </div>
+              <div className="language-card glass-card shadow-xl animate-float group hover:scale-105 transition-all duration-300 flex flex-col items-center p-6">
+                <div className="text-6xl mb-2">🇫🇷</div>
+                <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-500">Francese</h3>
+                <span className="inline-block mt-1 mb-2 px-3 py-1 rounded-full bg-gradient-to-r from-pink-400 to-pink-600 text-white text-xs font-semibold shadow-md">Intermedio</span>
                 <div className="mt-2 mb-1 text-xs text-secondary-300 font-medium">Livello di competenza</div>
                 <div className="w-full bg-secondary-700/50 h-3 rounded-full overflow-hidden shadow-inner" role="progressbar" aria-valuenow={75} aria-valuemin={0} aria-valuemax={100} aria-label="Livello intermedio francese">
-                  <div className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 h-full rounded-full language-bar-animation" style={{ width: '75%' }}></div>
+                  <div className="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 h-full rounded-full language-bar-animation" style={{ width: '75%' }}></div>
                 </div>
-                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/30 transition-all duration-700 ease-in-out"></div>
               </div>
             </div>
           </section>
@@ -251,15 +221,13 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent animate-text-glow">
               About Me
             </h2>
-            <div className="description-block">
+            <div className="description-block grid gap-4">
   {description.split('. ').map((sentence: string, index: number) => (
-    <div key={index} className={index % 2 === 0 ? 'description-block-left' : 'description-block-right'}
-      style={{
-        backgroundColor: index % 2 === 0 ? 'rgba(139, 92, 246, 0.05)' : 'rgba(139, 92, 246, 0.1)',
-        borderColor: index % 2 === 0 ? 'rgba(139, 92, 246, 0.1)' : 'rgba(139, 92, 246, 0.2)',
-        margin: index % 2 === 0 ? '0 20% 0 0' : '0 0 0 20%'
-      }}
-    >
+    <div key={index} className="glass-card shadow-xl animate-float p-4 text-base font-medium text-secondary-100 bg-opacity-80 border border-primary-900/10 hover:scale-105 transition-all duration-300" style={{
+      backgroundColor: index % 2 === 0 ? 'rgba(139, 92, 246, 0.08)' : 'rgba(139, 92, 246, 0.13)',
+      borderColor: index % 2 === 0 ? 'rgba(139, 92, 246, 0.13)' : 'rgba(139, 92, 246, 0.18)',
+      margin: 0
+    }}>
       {sentence}.
     </div>
   ))}
@@ -271,26 +239,23 @@ export default function Home() {
   );
 }
 
-function ProjectCard({ title, description, image }: { title: string, description: string, image: string }) {
+function ProjectCard({ title, description, image, liveDemo }: { title: string, description: string, image: string, liveDemo?: string }) {
   return (
-    <div className="bg-secondary-800/50 backdrop-blur-sm p-6 rounded-xl hover:bg-secondary-700/70 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover">
-      <div className="cheat-image">
-        <Image src={image} alt={title} width={800} height={400} className="w-full h-48 object-cover rounded-lg mb-4" />
+    <div className="bg-secondary-800/50 backdrop-blur-sm p-6 rounded-xl hover:bg-secondary-700/70 transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-primary-500/10 border border-secondary-700 hover:border-primary-400 lucid-hover flex flex-col justify-between min-h-[320px]">
+      <div className="cheat-image mb-4">
+        <Image src={image} alt={title} width={800} height={400} className="w-full h-48 object-cover rounded-lg" loading="lazy" />
       </div>
       <h3 className="font-medium text-xl mb-2 transition-colors duration-500 hover:text-primary-400">{title}</h3>
-      <div className="description-block">
-  {description.split('. ').map((sentence: string, index: number) => (
-    <div key={index} className={index % 2 === 0 ? 'description-block-left' : 'description-block-right'}
-      style={{
-        backgroundColor: index % 2 === 0 ? 'rgba(139, 92, 246, 0.05)' : 'rgba(139, 92, 246, 0.1)',
-        borderColor: index % 2 === 0 ? 'rgba(139, 92, 246, 0.1)' : 'rgba(139, 92, 246, 0.2)',
-        margin: index % 2 === 0 ? '0 20% 0 0' : '0 0 0 20%'
-      }}
-    >
-      {sentence}.
-    </div>
-  ))}
-</div>
+      <div className="description-block mb-4">
+        {description.split('. ').map((sentence: string, index: number) => (
+          <div key={index} className="text-sm text-secondary-200 mb-1">
+            {sentence}.
+          </div>
+        ))}
+      </div>
+      {liveDemo && (
+        <a href={liveDemo} target="_blank" rel="noopener noreferrer" className="premium-btn w-full text-center mt-auto">Live Demo</a>
+      )}
     </div>
   );
 }
