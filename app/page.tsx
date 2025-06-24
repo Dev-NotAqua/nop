@@ -44,19 +44,19 @@ const DiscordIcon = () => (
 );
 
 const skills = [
-  { skill: 'JavaScript', category: 'Frontend', icon: '/icons/javascript.svg' },
-  { skill: 'TypeScript', category: 'Frontend', icon: '/icons/typescript.svg' },
-  { skill: 'React', category: 'Frontend', icon: '/icons/react.svg' },
-  { skill: 'Next.js', category: 'Fullstack', icon: '/icons/nextjs.svg' },
-  { skill: 'Node.js', category: 'Backend', icon: '/icons/nodejs.svg' },
-  { skill: 'TailwindCSS', category: 'Styling', icon: '/icons/tailwindcss.svg' },
-  { skill: 'C#', category: 'Backend', icon: '/icons/csharp.svg' },
-  { skill: 'C++', category: 'Systems', icon: '/icons/cplusplus.svg' },
-  { skill: 'Python', category: 'Scripting', icon: '/icons/python.svg' },
-  { skill: 'Kotlin', category: 'Mobile', icon: '/icons/kotlin.svg' },
-  { skill: 'Lua', category: 'Scripting', icon: '/icons/lua.svg' },
-  { skill: 'Java', category: 'Backend', icon: '/icons/java.svg' },
-  { skill: 'PHP', category: 'Backend', icon: '/icons/php.svg' }
+  { skill: 'JavaScript', category: 'Frontend', icon: '/nop/icons/javascript.svg' },
+  { skill: 'TypeScript', category: 'Frontend', icon: '/nop/icons/typescript.svg' },
+  { skill: 'React', category: 'Frontend', icon: '/nop/icons/react.svg' },
+  { skill: 'Next.js', category: 'Fullstack', icon: '/nop/icons/nextjs.svg' },
+  { skill: 'Node.js', category: 'Backend', icon: '/nop/icons/nodejs.svg' },
+  { skill: 'TailwindCSS', category: 'Styling', icon: '/nop/icons/tailwindcss.svg' },
+  { skill: 'C#', category: 'Backend', icon: '/nop/icons/csharp.svg' },
+  { skill: 'C++', category: 'Systems', icon: '/nop/icons/cplusplus.svg' },
+  { skill: 'Python', category: 'Scripting', icon: '/nop/icons/python.svg' },
+  { skill: 'Kotlin', category: 'Mobile', icon: '/nop/icons/kotlin.svg' },
+  { skill: 'Lua', category: 'Scripting', icon: '/nop/icons/lua.svg' },
+  { skill: 'Java', category: 'Backend', icon: '/nop/icons/java.svg' },
+  { skill: 'PHP', category: 'Backend', icon: '/nop/icons/php.svg' }
 ];
 
 const description = `As a passionate developer, I specialize in creating impactful web experiences. My expertise includes JavaScript, TypeScript, React for frontend, and Node.js, C# for backend development. I take pride in writing clean, efficient code that enhances performance and maintainability. My portfolio includes projects like the FiveM Cheat tool and Memorial Application, showcasing my ability to tackle complex challenges. I'm always eager to learn and contribute to exciting projects that make a difference.`;
